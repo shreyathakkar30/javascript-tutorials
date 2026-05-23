@@ -1,5 +1,5 @@
 # JavaScript Learning Journey
-
+## Daily JavaScript Learning Journey
 This repository contains my JavaScript practice code while learning from tutorials and experimenting with concepts.
 
 ## Topics Covered
