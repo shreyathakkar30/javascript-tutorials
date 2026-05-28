@@ -17,3 +17,23 @@ const data = (async () => await fetch("https://domain.name/path/file.ext")) ();
 
 const value = (() => 100)();
 console.log(value); 
+
+const ATM = (function (initialbalance){
+    let balance = initialbalance;
+
+    function withdraw(amt){
+        if(amt > balance){
+            return "Are you sure you have enough balance?";
+        }else{
+            balance -= amt;
+            return balance;
+            //console.log(`You have withdrawn ${amt} and your remaining balance is ${balance}`);
+        }
+    }
+    return { withdraw };
+})
+
+const shreya = ATM(1000);
+console.log(shreya.withdraw(200));
+console.log(shreya.withdraw(200));
+console.log(shreya.withdraw(2000));
