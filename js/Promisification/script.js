@@ -31,6 +31,12 @@ function loadScript(src, callback){
 const loadScriptNew = promisify(loadScript);
 console.log(loadScriptNew);
 loadScriptNew('test.js').then(() => console.log('Done!')).catch((err) => console.log(err));
+
+(async () => {
+    const result = await loadScriptNew('test.js');
+    console.log(result);
+    console.log('Done!');
+})();
 // loadScript('test.js', (err, callback) => {
 //     if(err){
 //         console.log(err);
