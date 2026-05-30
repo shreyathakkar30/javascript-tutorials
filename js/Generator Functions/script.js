@@ -54,3 +54,16 @@ const even = count ();
 for (const val of even) {
     console.log(val);
 }
+
+//Button to get next value from the generator
+function* makeiterator(start = 0, end = Infinity, step = 1){
+    for (let i = start; i < end; i += step) {
+        yield i;
+    }
+}
+const nextBtn = document.getElementById('nextBtn');
+let ibe = makeiterator(1, 10, 1);
+
+nextBtn.addEventListener('click', () => {
+    nextBtn.innerText = ibe.next().value;
+})
